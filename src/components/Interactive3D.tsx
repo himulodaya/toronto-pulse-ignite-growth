@@ -18,7 +18,7 @@ function Scene() {
       }}
     >
       <torusGeometry args={[2, 0.5, 16, 32]} />
-      <meshStandardMaterial color="#6366F1" roughness={0.5} metalness={0.8} />
+      <meshStandardMaterial color={new THREE.Color("#6366F1")} roughness={0.5} metalness={0.8} />
     </mesh>
   );
 }
