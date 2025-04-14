@@ -13,8 +13,8 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 py-12 md:py-20 relative z-10">
-        <div className="flex flex-col md:flex-row items-center md:space-x-8 lg:space-x-16">
-          <div className="w-full md:w-1/2 space-y-6 text-center md:text-left mb-12 md:mb-0">
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="max-w-3xl space-y-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               Tired of Marketing That <span className="gradient-text">Fails in Toronto</span>?
             </h1>
@@ -28,18 +28,6 @@ const HeroSection = () => {
                 Get My Free Demo & Growth Insights
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </div>
-          </div>
-          
-          <div className="w-full md:w-1/2 relative">
-            <div className="rounded-lg bg-gradient-to-tr from-primary via-secondary to-accent p-1 shadow-xl animate-float">
-              <div className="bg-darkbg rounded-md overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=800&h=600" 
-                  alt="Toronto business owners reviewing marketing strategy on digital screens" 
-                  className="w-full h-auto object-cover"
-                />
-              </div>
             </div>
           </div>
         </div>
