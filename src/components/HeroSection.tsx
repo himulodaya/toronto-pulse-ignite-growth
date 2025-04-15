@@ -1,10 +1,30 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect } from "react";
 
 const HeroSection = () => {
+  useEffect(() => {
+    // @ts-ignore - threejs-toys doesn't have TypeScript definitions
+    import("threejs-toys").then(({ neonCursor }) => {
+      neonCursor({
+        el: document.getElementById("hero"),
+        shaderPoints: 16,
+        curvePoints: 80,
+        curveLerp: 0.5,
+        radius1: 5,
+        radius2: 30,
+        velocityTreshold: 10,
+        sleepRadiusX: 100,
+        sleepRadiusY: 100,
+        sleepTimeCoefX: 0.0025,
+        sleepTimeCoefY: 0.0025
+      });
+    });
+  }, []);
+
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-darkbg pt-16">
+    <section id="hero" className="relative min-h-[90vh] flex items-center overflow-hidden bg-darkbg pt-16">
       {/* Background effect */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute top-20 right-20 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse-slow"></div>
