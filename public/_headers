@@ -1,2 +1,2 @@
-git add public/_headers
-git commit -m "Add _headers file to set correct MIME type for JS"
+/*.js
+  Content-Type: text/javascript
