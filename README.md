@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
+# webrewery.io Project
 
-## Project info
+This project is a web application, likely a landing page or marketing site, built using modern frontend technologies.
 
-**URL**: https://lovable.dev/projects/60c8b236-5738-42eb-b5d7-b2e68b6a3cad
+## Technologies Used
 
-## How can I edit this code?
+This project leverages the following core technologies:
 
-There are several ways of editing your application.
+* **Framework**: React
+* **Build Tool**: Vite
+* **Language**: TypeScript
+* **UI Components**: shadcn/ui
+* **Styling**: Tailwind CSS
 
-**Use Lovable**
+Key dependencies include:
+* `react`, `react-dom`
+* `react-router-dom` for routing
+* `tailwindcss`, `postcss`, `autoprefixer` for styling
+* Various `@radix-ui/*` packages for accessible UI primitives
+* `lucide-react` for icons
+* `class-variance-authority`, `clsx`, `tailwind-merge` for utility functions
+* `three`, `threejs-toys` for potential 3D/visual effects (as seen in HeroSection)
+* `sonner`, `@tanstack/react-query` for notifications and data fetching/state management
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/60c8b236-5738-42eb-b5d7-b2e68b6a3cad) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+To run this project locally, ensure you have Node.js and npm (or yarn) installed.
 
-**Use your preferred IDE**
+1.  **Clone the repository:**
+    ```sh
+    # Replace with your actual repository URL
+    git clone <YOUR_GIT_REPOSITORY_URL>
+    cd webrewery.io
+    ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2.  **Install dependencies:**
+    ```sh
+    npm install
+    ```
+    *(This command installs all the necessary packages listed in `package.json`)*
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3.  **Run the development server:**
+    ```sh
+    npm run dev
+    ```
+    *(This command starts the Vite development server, typically available at `http://localhost:8080`)*
 
-Follow these steps:
+## Available Scripts
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* `npm run dev`: Starts the development server with hot reloading.
+* `npm run build`: Creates an optimized production build in the `dist/` directory.
+* `npm run lint`: Runs the ESLint linter to check code quality.
+* `npm run preview`: Serves the production build locally for previewing.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Project Structure Overview
 
-# Step 3: Install the necessary dependencies.
-npm i
+* **`public/`**: Contains static assets (`robots.txt`, `_headers`, `_redirects`) that are copied directly to the build output directory.
+* **`src/`**: Contains the core application source code.
+    * **`components/`**: Reusable React components.
+        * **`ui/`**: UI primitives based on shadcn/ui (Button, Card, Dialog, etc.).
+        * Feature-specific components (e.g., `HeroSection.tsx`, `BenefitsSection.tsx`, `Footer.tsx`).
+    * **`hooks/`**: Custom React hooks (e.g., `use-mobile.tsx`, `use-toast.ts`).
+    * **`lib/`**: Utility functions (e.g., `utils.ts` containing `cn`).
+    * **`pages/`**: Page-level components mapped to application routes (e.g., `Index.tsx`, `NotFound.tsx`).
+    * **`App.tsx`**: The main application component, setting up routing (`react-router-dom`) and context providers (QueryClientProvider, TooltipProvider, Toasters).
+    * **`main.tsx`**: The application entry point that renders the root `App` component into the DOM.
+    * **`index.css`**: Global styles, Tailwind CSS directives, and custom CSS classes/variables.
+* **`index.html`**: The HTML template file used by Vite.
+* **`package.json`**: Project metadata, dependencies, and scripts.
+* **`vite.config.ts`**: Configuration for the Vite build tool.
+* **`tailwind.config.ts`**: Configuration for Tailwind CSS.
+* **`tsconfig.*.json`**: TypeScript configuration files for the app and Node.js environment.
+* **`postcss.config.js`**: Configuration for PostCSS (used with Tailwind).
+* **`eslint.config.js`**: Configuration for ESLint.
+* **`Dockerfile`**: Defines steps to build a Docker container for deploying the application using Node.js for the build stage and Nginx for serving.
+* **`components.json`**: Configuration file for shadcn/ui CLI.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Deployment
 
-**Edit a file directly in GitHub**
+This project includes a `Dockerfile` which can be used to build a container image for deployment. The Dockerfile sets up a multi-stage build using Node.js to build the static assets and Nginx to serve them.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/60c8b236-5738-42eb-b5d7-b2e68b6a3cad) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+*(You can add more specific instructions here based on your chosen hosting provider or deployment workflow, e.g., Netlify, Vercel, AWS, Google Cloud, etc.)*
