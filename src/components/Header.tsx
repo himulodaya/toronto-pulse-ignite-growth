@@ -10,7 +10,10 @@ const Header = () => {
       {/* Main container for logo, desktop nav, and mobile toggle */}
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <span className="text-xl font-bold gradient-text">webrewery</span>
+          {/* Webrewery logo/text made clickable */}
+          <a href="#hero" className="text-xl font-bold gradient-text cursor-pointer">
+            webrewery
+          </a>
         </div>
 
         {/* Desktop Navigation */}
@@ -51,7 +54,7 @@ const Header = () => {
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div> {/* This closing div was misplaced, moved here */}
+      </div>
 
       {/* Mobile Menu - This appears below the main header bar on mobile */}
       {mobileMenuOpen && (
