@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle"; // Import the new component
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,7 +12,12 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           {/* Webrewery logo/text made clickable - links to the homepage */}
-          <a href="/" className="text-xl font-bold gradient-text cursor-pointer"> {/* Changed href to "/" */}
+          <a
+            href="/"
+            className="text-xl font-bold gradient-text cursor-pointer"
+          >
+            {" "}
+            {/* Changed href to "/" */}
             webrewery
           </a>
         </div>
@@ -45,6 +51,7 @@ const Header = () => {
           <Button size="sm" asChild variant="default">
             <a href="#cta">Get Free Demo</a>
           </Button>
+          <ThemeToggle /> {/* Add ThemeToggle here for desktop navigation */}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -93,6 +100,7 @@ const Header = () => {
                 Get Free Demo
               </a>
             </Button>
+            <ThemeToggle /> {/* Add ThemeToggle here for mobile menu */}
           </div>
         </div>
       )}
