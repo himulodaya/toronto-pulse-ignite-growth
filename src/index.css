@@ -1,86 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+import { useEffect } from "react";
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import ProblemSection from "@/components/ProblemSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import DifferentiationSection from "@/components/DifferentiationSection";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// Main Index page component
+const Index = () => {
+  // This useEffect hook was previously used to force dark mode on page load.
+  // We are removing it so the ThemeToggle component can manage the theme state
+  // based on local storage or system preference.
+  /*
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+    document.body.style.backgroundColor = "#121212";
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    return () => {
+      document.documentElement.classList.remove("dark");
+      document.body.style.backgroundColor = "";
+    };
+  }, []);
+  */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+  return (
+    // The main container div uses Tailwind CSS classes
+    // bg-background and text-foreground. These classes are defined in
+    // src/index.css and are configured to switch colors based on the presence
+    // of the 'dark' class on the documentElement, which is controlled by ThemeToggle.
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
+      {/* Include the Header component (which now contains the ThemeToggle) */}
+      <Header />
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+      {/* Main content area containing all the sections */}
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <BenefitsSection />
+        <TestimonialsSection />
+        <DifferentiationSection />
+        <FAQSection />
+        <CTASection />
+      </main>
 
-    --primary: 222.2 47.4% 48.8%;
-    --primary-foreground: 210 20% 98%;
+      {/* Include the Footer component */}
+      <Footer />
+    </div>
+  );
+};
 
-    --secondary: 222.2 17.9% 21.5%;
-    --secondary-foreground: 210 20% 98%;
-
-    --muted: 222.2 14.9% 87.9%;
-    --muted-foreground: 222.2 7% 50.6%;
-
-    --accent: 217.2 91.2% 59.8%;
-    --accent-foreground: 210 20% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 210 40% 98%;
-
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 217.2 91.2% 59.8%; /* Adjusted primary color for dark mode if needed */
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 220 14% 71%;
-
-    --accent: 217.2 91.2% 59.8%; /* Using the same accent for consistency */
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    /* Add padding at the top for the fixed header */
-    /* Adjust the pixel value (e.g., 80px) to exactly match your header's height */
-    scroll-padding-top: 80px; /* You may need to adjust this value */
-  }
-
-  @layer utilities {
-    .gradient-text {
-      background: linear-gradient(to right, #7857ff, #ff898f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-    }
-  }
-}
+export default Index;
