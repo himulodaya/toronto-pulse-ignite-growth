@@ -10,8 +10,8 @@ const Header = () => {
       {/* Main container for logo, desktop nav, and mobile toggle */}
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          {/* Webrewery logo/text made clickable */}
-          <a href="#hero" className="text-xl font-bold gradient-text cursor-pointer">
+          {/* Webrewery logo/text made clickable - links to the homepage */}
+          <a href="/" className="text-xl font-bold gradient-text cursor-pointer"> {/* Changed href to "/" */}
             webrewery
           </a>
         </div>
