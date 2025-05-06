@@ -8,10 +8,19 @@ const Header = () => {
   
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-darkbg/95 backdrop-blur-sm border-b border-neutral/20">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <span className="text-xl font-bold gradient-text">Webrewery</span>
-        </div>
+      <div className="flex items-center">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setMobileMenuOpen(false); // 👈 Optional: close mobile menu if open
+          }}
+          className="text-xl font-bold gradient-text cursor-pointer"
+        >
+          Webrewery
+        </a>
+      </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
