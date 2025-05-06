@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Toggle } from "@/components/ui/toggle"; // Assuming you have this Shadcn/ui component
-import { Sun, Moon } from "lucide-react";
+import { Switch } from "@/components/ui/switch"; // Import the Switch component
+import { Sun, Moon } from "lucide-react"; // Import icons
 
 const ThemeToggle = () => {
   // State to hold the current theme, initialized from local storage or system preference
@@ -23,8 +23,10 @@ const ThemeToggle = () => {
     const root = document.documentElement;
     if (theme === "dark") {
       root.classList.add("dark");
+      console.log("Applying dark theme"); // Debugging log
     } else {
       root.classList.remove("dark");
+      console.log("Applying light theme"); // Debugging log
     }
     // Save the current theme to local storage
     if (typeof localStorage !== "undefined") {
@@ -33,21 +35,27 @@ const ThemeToggle = () => {
   }, [theme]); // Rerun this effect whenever the `theme` state changes
 
   // Function to toggle the theme between 'dark' and 'light'
-  const toggleTheme = () => {
-    setTheme((prevTheme: string) => (prevTheme === "dark" ? "light" : "dark"));
+  // This function will be called by the Switch component's onCheckedChange prop
+  const toggleTheme = (checked: boolean) => {
+    setTheme(checked ? "dark" : "light");
   };
 
   return (
-    // Use the Shadcn/ui Toggle component
-    <Toggle
-      pressed={theme === "dark"} // Set pressed state based on current theme
-      onPressedChange={toggleTheme} // Call toggleTheme when the button is pressed
-      aria-label="Toggle theme" // Accessibility label
-    >
-      {/* Display Sun icon in light mode, Moon icon in dark mode */}
-      {theme === "dark" ? <Moon size={20} /> : <Sun size={20} />}{" "}
-      {/* You might adjust icon size */}
-    </Toggle>
+    // Container div to hold the icons and the switch
+    <div className="flex items-center space-x-2">
+      {/* Display Sun icon */}
+      <Sun size={20} className="text-foreground" />
+
+      {/* Use the Shadcn/ui Switch component */}
+      <Switch
+        checked={theme === "dark"} // Set checked state based on current theme
+        onCheckedChange={toggleTheme} // Call toggleTheme when the switch state changes
+        aria-label="Toggle theme" // Accessibility label
+      />
+
+      {/* Display Moon icon */}
+      <Moon size={20} className="text-foreground" />
+    </div>
   );
 };
 
