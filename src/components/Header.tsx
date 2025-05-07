@@ -18,7 +18,7 @@ const Header = () => {
           >
             {" "}
             {/* Changed href to "/" */}
-            webrewery
+            Webrewery
           </a>
         </div>
 
