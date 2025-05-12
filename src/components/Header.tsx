@@ -49,7 +49,7 @@ const Header = () => {
             FAQ
           </a>
           <Button size="sm" asChild variant="default">
-            <a href="#cta">Get Free Demo</a>
+            <a href="#cta">Contact Us</a>
           </Button>
           <ThemeToggle /> {/* Add ThemeToggle here for desktop navigation */}
         </nav>
@@ -97,7 +97,7 @@ const Header = () => {
             </a>
             <Button asChild variant="default" className="w-full">
               <a href="#cta" onClick={() => setMobileMenuOpen(false)}>
-                Get Free Demo
+                Contact Us
               </a>
             </Button>
             <ThemeToggle /> {/* Add ThemeToggle here for mobile menu */}
