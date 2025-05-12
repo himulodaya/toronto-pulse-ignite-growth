@@ -18,9 +18,10 @@ const CTASection = () => {
           </p>
           
           <Button size="lg" className="group text-base mb-4">
-            <Link to="/booking"></Link>
-            Get My Free Demo & Toronto Growth Plan
+            <Link to="/booking" className="flex items-center justify-center">
+            Get Our Free Demo & Growth Plan
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
           
           <p className="text-sm text-neutral-300">
