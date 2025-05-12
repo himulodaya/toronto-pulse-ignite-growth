@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import ThemeToggle from "@/components/ThemeToggle"; // Import the new component
+import ThemeToggle from "@/components/ThemeToggle";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,7 +50,7 @@ const Header = () => {
             FAQ
           </a>
           <Button size="sm" asChild variant="default">
-            <a href="#cta">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </Button>
           <ThemeToggle /> {/* Add ThemeToggle here for desktop navigation */}
         </nav>
@@ -96,9 +97,10 @@ const Header = () => {
               FAQ
             </a>
             <Button asChild variant="default" className="w-full">
-              <a href="#cta" onClick={() => setMobileMenuOpen(false)}>
+               {/* Use Link to navigate to the Contact Us page */}
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 Contact Us
-              </a>
+              </Link>
             </Button>
             <ThemeToggle /> {/* Add ThemeToggle here for mobile menu */}
           </div>

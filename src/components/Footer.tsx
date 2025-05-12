@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,7 +13,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-sm">
             <a href="#" className="text-neutral-300 hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="text-neutral-300 hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="text-neutral-300 hover:text-white transition-colors">Contact Us</a>
+            <Link to="/contact" className="text-neutral-300 hover:text-white transition-colors">
+              Contact Us
+            </Link>
           </div>
         </div>
         
