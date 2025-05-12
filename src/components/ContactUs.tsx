@@ -20,18 +20,18 @@ const ContactUsFormContent = () => {
             </p>
             <div className="flex items-center space-x-3">
               <Phone className="h-5 w-5 text-primary" />
-              <span>484.324.2400</span> {/* Replace with your actual phone number */}
+              <span>437.9714507.</span> {/* Replace with your actual phone number */}
             </div>
             <div className="flex items-center space-x-3">
               <Mail className="h-5 w-5 text-primary" />
-              <span>info@yourcompany.com</span> {/* Replace with your actual email */}
+              <span>cheers@webrewery.io</span> {/* Replace with your actual email */}
             </div>
             <div className="flex items-start space-x-3">
               <MapPin className="h-5 w-5 text-primary mt-1" />
               <span>
-                15 West 3rd St. {/* Replace with your actual address */}
+                500 Wilson Ave {/* Replace with your actual address */}
                 <br />
-                Media, Pa 19063 {/* Replace with your actual city and postal code */}
+                North York, ON M3h 0C5 {/* Replace with your actual city and postal code */}
               </span>
             </div>
           </div>
@@ -51,11 +51,11 @@ const ContactUsFormContent = () => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="example@email.com" />
+                <Input id="email" type="email" placeholder="john@webrewery.io" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone (optional)</Label>
-                <Input id="phone" type="tel" placeholder="XXX-XXX-XXXX" />
+                <Input id="phone" type="tel" placeholder="999-999-9999" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
