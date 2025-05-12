@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -17,12 +18,13 @@ const CTASection = () => {
           </p>
           
           <Button size="lg" className="group text-base mb-4">
+            <Link to="/booking"></Link>
             Get My Free Demo & Toronto Growth Plan
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
           
           <p className="text-sm text-neutral-300">
-            30 Mins • Free Custom Insights • Zero Obligation
+            45 Mins • Free Custom Insights • Zero Obligation
           </p>
           
           <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
